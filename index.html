@@ -81,6 +81,7 @@
         }
 
         @media (max-width: 830px) {
+            /* LOGO BAHAVIOUR ON SMALL  */
             .nav-logo {
                 flex-direction: column;
                 margin-left: 0px;
@@ -109,50 +110,61 @@
             display: flex;
         }
 
-        .nav-content-secondary {
+        .nav-button {
+            text-decoration: none;
+            color: var(--ampervolt-white);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        .nav-button-primary {
+            background-color: var(--ampervolt-blue);
+            color: var(--ampervolt-white);
+            border-radius: 20px;
+            border: 1px solid var(--ampervolt-blue);
+            padding: 10px 15px 10px 15px;
+            transition: .1s ease-in-out;
+        }
+
+        .nav-button-primary:hover {
+            color: var(--ampervolt-blue);
+            background-color: var(--ampervolt-white);
+            transition: .1s ease-in-out;
+        }
+
+        .nav-button-secondary {
             margin-right: 20px;
             padding: 10px;
-            text-decoration: none;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color: var(--ampervolt-white);
             border-bottom: var(--ampervolt-white) solid 1px;
-            transition: border-bottom .1s ease-in-out;
+            transition: .1s ease-in-out;
             white-space: nowrap;
         }
 
-        .nav-content-primary {
-            background-color: var(--ampervolt-blue);
-            color: #fff !important;
-            border-radius: 20px;
-            border: 1px solid var(--ampervolt-blue);
-            padding: 10px 15px 10px 15px !important;
+        .nav-button-secondary:hover {
+            transition: .1s ease-in-out;
+            border-bottom: var(--ampervolt-blue) solid 1px;
+            color: var(--ampervolt-blue)
         }
 
         .nav-content-social-buttons {
             height: 40px;
             width: 100px;
             display: flex;
+            margin-left: 10px; /* TODO HAMBURGER remove margin */
+            flex-direction: row !important;
         }
         .nav-content-social {
             display: block;
-            background-color: var(--ampervolt-white);
-            width: 40px;
-            height: 40px;
+            width: 40px !important;
+            height: 40px !important;
             margin-left: 5px;
             margin-right: 5px;
-            border-radius: 100%;
-            color: var(--ampervolt-black);
+            border-radius: 100% !important;
+            padding: 1px;
         }
         .nav-content-social::before{
-            padding: 11px;
+            padding: 12px; /* TODO WHY THAT NUM ? SHOULD BE DYNAMIC */
 
-        }
-
-        .nav-content-secondary:hover {
-            transition: border-bottom .1s ease-in-out;
-            transition: color .1s ease-in-out;
-            border-bottom: var(--ampervolt-blue) solid 1px;
-            color: var(--ampervolt-blue)
         }
 
         .nav-hamburger {
@@ -186,31 +198,6 @@
         #hamburger-close:hover {
             rotate: 360deg;
             transition: 1s;
-        }
-
-        container {
-            margin-top: 90px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .tiles {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .tile {
-            background-color: #fff;
-            border-radius: 15px;
-            width: 250px;
-            height: 400px;
-            margin: 10px;
-        }
-
-        .wide {
-            width: 450px;
         }
 
         /* TABLETS */
@@ -277,12 +264,12 @@
             <label for="hamburger-open">
                 <i class="bi bi-arrow-up-circle" for="hamburger-open" id="hamburger-close"></i>
             </label>
-            <a class="nav-content-secondary" href="#test">Oferta</a>
-            <a class="nav-content-secondary" href="#test1">Lokalizacja</a>
-            <a class="nav-content-primary" href="#test3">Kontakt</a>
+            <a class="nav-button nav-button-secondary" href="#test">Oferta</a>
+            <a class="nav-button nav-button-secondary" href="#test1">Lokalizacja</a>
+            <a class="nav-button nav-button-primary" href="#test3">Kontakt</a>
             <div class="nav-content-social-buttons">
-                <a class="nav-content-social bi bi-map" href="https://maps.app.goo.gl/kyhmr7DarfsWFWNH9"></a>
-                <a class="nav-content-social bi bi-envelope" href="mailto:ma.ankiewicz1@gmail.com"></a>
+                <a class="nav-button-primary nav-content-social bi bi-map-fill" href="https://maps.app.goo.gl/kyhmr7DarfsWFWNH9"></a>
+                <a class="nav-button-primary nav-content-social bi bi-envelope-fill" href="mailto:ma.ankiewicz1@gmail.com"></a>
             </div>
         </div>
         <label class="nav-hamburger" for="hamburger-open">
