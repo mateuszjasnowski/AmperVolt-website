@@ -37,15 +37,17 @@
     <!--IF NEEDED-->
     <link rel="icon" type="image/x-icon" href="./img/favicon.png"> <!--TODO-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <style>
         :root {
             --ampervolt-blue: #005ae1;
             --ampervolt-black: #000;
             --ampervolt-white: #fff;
+            --ampervolt-green: #5be2d7;
             --basis-gray: #A6A6A6;
         }
 
-        body {
+        /*body {
             width: 100%;
             margin: 0;
         }
@@ -81,7 +83,7 @@
         }
 
         @media (max-width: 830px) {
-            /* LOGO BAHAVIOUR ON SMALL  */
+
             .nav-logo {
                 flex-direction: column;
                 margin-left: 0px;
@@ -150,9 +152,15 @@
             height: 40px;
             width: 100px;
             display: flex;
-            margin-left: 10px; /* TODO HAMBURGER remove margin */
+            margin-left: 10px;
             flex-direction: row !important;
         }
+
+        .nav-content-social-buttons a {
+            width: 40px;
+            height: 40px;
+        }
+
         .nav-content-social {
             display: block;
             width: 40px !important;
@@ -162,8 +170,9 @@
             border-radius: 100% !important;
             padding: 1px;
         }
-        .nav-content-social::before{
-            padding: 12px; /* TODO WHY THAT NUM ? SHOULD BE DYNAMIC */
+
+        .nav-content-social::before {
+            padding: 12px;
 
         }
 
@@ -181,9 +190,7 @@
             transition: .3s ease-in-out;
         }
 
-        #hamburger-open {
-            display: none;
-        }
+
 
         .nav-hamburger i {
             padding: 2.5px;
@@ -191,21 +198,86 @@
             font-weight: bold;
         }
 
-        #hamburger-close {
+        */
+
+        #hamburger-status {
             display: none;
         }
 
-        #hamburger-close:hover {
-            rotate: 360deg;
-            transition: 1s;
+        .av-nav-logo a {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .av-nav-logo a img {
+            transition: .5s;
+        }
+
+        .av-nav-logo a:hover>img {
+            filter: drop-shadow(0px 2px 5px var(--ampervolt-green));
+            transition: .5s;
+        }
+
+        .av-nav-btns a:hover {
+            filter: drop-shadow(0px 2px 5px var(--ampervolt-green));
+            scale: 1.05;
+            transition: .5s;
+        }
+
+        .av-nav-btns a {
+            transition: .5s;
+        }
+
+        .av-social-btn {
+            width: 40px !important;
+            height: 40px !important;
+        }
+
+        .av-nav-mobile {
+            display: none;
+        }
+        #hamburger-open {
+            transition: .5s;
+        }
+
+        #hamburger-status:checked~.av-nav-mobile #hamburger-open {
+            transform: rotate(90deg);
+            transition: .5s;
         }
 
         /* TABLETS */
-        @media (max-width: 770px) {
-            .nav-content {
+        @media (max-width: 700px) {
+            .av-nav-logo a {
+                flex-direction: column;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+            .av-nav-mobile {
+                display: block;
+            }
+
+            .av-nav-btns {
+                display: none;
+            }
+
+            #hamburger-status:checked~.av-nav-btns {
+                display: block;
+            }
+            .av-nav-header {
+                justify-content: center !important;
+                flex-direction: column !important;
+            }
+
+            .av-nav-btns {
+                margin-top: 1rem;
+            }
+        }
+
+        /*.nav-content {
                 position: absolute;
                 top: -100vh;
-                /* move to 0 when open */
                 left: 0;
                 flex-direction: column;
                 width: 100%;
@@ -218,19 +290,13 @@
                 transition: 1s;
             }
 
-            #hamburger-close {
-                height: 40px;
-                font-size: 40px;
-                display: block;
-            }
+
 
             .nav-hamburger {
                 display: block;
             }
 
-            #hamburger-open:checked~.nav-content {
-                top: 0px;
-            }
+
 
             .nav-content a {
                 margin-top: 10%;
@@ -240,42 +306,61 @@
             .nav-logo {
                 flex-direction: row;
                 margin-left: 40%;
-                /* TODO make it center instead of 40%*/
             }
 
             .nav-logo p {
                 margin-bottom: 1px;
-            }
-        }
-
-        /* SMARTPHONES */
-        @media (max-width: 500px) {}
+            }*/
     </style>
 </head>
 
 <body>
-    <nav class="navigation-bar">
-        <a class="nav-logo" href="./">
-            <img src="./img/logo-kolor.svg" width="80px">
-            <p>AmperVolt</p>
-        </a>
-        <input type="checkbox" name="hamburger-open" id="hamburger-open" />
-        <div class="nav-content">
-            <label for="hamburger-open">
-                <i class="bi bi-arrow-up-circle" for="hamburger-open" id="hamburger-close"></i>
-            </label>
-            <a class="nav-button nav-button-secondary" href="#test">Oferta</a>
-            <a class="nav-button nav-button-secondary" href="#test1">Lokalizacja</a>
-            <a class="nav-button nav-button-primary" href="#test3">Kontakt</a>
-            <div class="nav-content-social-buttons">
-                <a class="nav-button-primary nav-content-social bi bi-map-fill" href="https://maps.app.goo.gl/kyhmr7DarfsWFWNH9"></a>
-                <a class="nav-button-primary nav-content-social bi bi-envelope-fill" href="mailto:ma.ankiewicz1@gmail.com"></a>
+    <header class="p-3 text-bg-dark">
+        <div class="container-lg">
+            <div class="d-flex flex-wrap align-items-center justify-content-between av-nav-header">
+                <div class="av-nav-logo">
+                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                        <!--<svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                            <use xlink:href="#bootstrap"></use>
+                        </svg> TODO use svg logo-->
+                        <img src="https://ampervolt1.wordpress.com/wp-content/uploads/2023/11/podstawowe-sygnet-3.png?w=300"
+                            width="80px" height="80px">
+                        <img src="https://ampervolt1.wordpress.com/wp-content/uploads/2023/11/podstawowe-nazwa-4100041405-e1721157723486.png?w=1024"
+                            height="20px">
+                    </a>
+                </div>
+
+                <input type="checkbox" name="hamburger-status" id="hamburger-status"/>
+                <div class="av-nav-mobile">
+                    <label for="hamburger-status" id="hamburger-open">
+                        <i class="bi bi-list" for="hamburger-status"></i>
+                    </label>
+                </div>
+
+                <div class="av-nav-btns">
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+
+                        <li><a href="#" class="nav-link px-2 text-white">Oferta</a></li>
+                        <li><a href="#" class="nav-link px-2 text-white">Lokalizacja</a></li>
+                        <li>
+                            <button type="button" class="btn btn-primary me-2 rounded-4">Kontakt</button>
+                        </li>
+                        <li>
+                            <div>
+                                <button class="btn btn-light rounded-circle av-social-btn"
+                                    href="https://maps.app.goo.gl/kyhmr7DarfsWFWNH9">
+                                    <i class="bi bi-map-fill"></i>
+                                </button>
+                                <button class="btn btn-light rounded-circle av-social-btn">
+                                    <i class="bi bi-envelope-fill"></i>
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <label class="nav-hamburger" for="hamburger-open">
-            <i class="bi bi-list"></i>
-        </label>
-    </nav>
+    </header>
 </body>
 
 </html>
