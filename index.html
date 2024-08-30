@@ -209,18 +209,19 @@
             flex-direction: row;
         }
 
-        .av-nav-logo a img {
+        .av-nav-logo a * {
             transition: .5s;
         }
 
-        .av-nav-logo a:hover>img {
+        .av-nav-logo a:hover>* {
             filter: drop-shadow(0px 2px 5px var(--ampervolt-green));
             transition: .5s;
+            scale: 1.05;
         }
 
         .av-nav-btns a:hover {
             filter: drop-shadow(0px 2px 5px var(--ampervolt-green));
-            scale: 1.05;
+            scale: 1.02;
             transition: .5s;
         }
 
@@ -236,6 +237,7 @@
         .av-nav-mobile {
             display: none;
         }
+
         #hamburger-open {
             transition: .5s;
         }
@@ -265,6 +267,7 @@
             #hamburger-status:checked~.av-nav-btns {
                 display: block;
             }
+
             .av-nav-header {
                 justify-content: center !important;
                 flex-direction: column !important;
@@ -315,7 +318,7 @@
 </head>
 
 <body>
-    <header class="p-3 text-bg-dark">
+    <header class="p-3 text-bg-dark position-sticky top-0 w-100 z-3">
         <div class="container-lg">
             <div class="d-flex flex-wrap align-items-center justify-content-between av-nav-header">
                 <div class="av-nav-logo">
@@ -330,7 +333,7 @@
                     </a>
                 </div>
 
-                <input type="checkbox" name="hamburger-status" id="hamburger-status"/>
+                <input type="checkbox" name="hamburger-status" id="hamburger-status" />
                 <div class="av-nav-mobile">
                     <label for="hamburger-status" id="hamburger-open">
                         <i class="bi bi-list" for="hamburger-status"></i>
@@ -349,10 +352,10 @@
                             <div>
                                 <button class="btn btn-light rounded-circle av-social-btn"
                                     href="https://maps.app.goo.gl/kyhmr7DarfsWFWNH9">
-                                    <i class="bi bi-map-fill"></i>
+                                    <i class="bi bi-geo-alt"></i>
                                 </button>
                                 <button class="btn btn-light rounded-circle av-social-btn">
-                                    <i class="bi bi-envelope-fill"></i>
+                                    <i class="bi bi-envelope"></i>
                                 </button>
                             </div>
                         </li>
@@ -361,6 +364,63 @@
             </div>
         </div>
     </header>
+    <main class="container mw-100 px-0 mx-0">
+        <div class="row w-100 mx-0 px-0 d-flex align-items-center"
+            style="background-image: url('https://ampervolt1.wordpress.com/wp-content/uploads/2023/11/pexels-photo-18306342.jpeg'); height: 430px; background-position: 10% 30%; background-size: 100%; background-repeat: no-repeat;">
+            <div class="d-flex flex-column text-white text-center fw-bolder">
+                <h1 class="pb-3">
+                    Usługi elektryczne AmperVolt</h1>
+                <code
+                    class="text-white fs1">Szukasz wykonawcy usług elektrycznych?<br>Wyjdziemy naprzeciw Twoim oczekiwaniom,<br>przedstawiając rozwiązania szyte na miarę Twoich potrzeb</code>
+
+            </div>
+        </div>
+        <div class="container mt-2">
+            <div class="row">
+                <h1> Nasza Oferta</h1>
+            </div>
+            <div class="container px-0 mx-0">
+                <div class="row text-white">
+                    <!-- Left Column (30%) -->
+                    <div class="col-md-8 px-1">
+                        <div class="bg-body-secondary rounded-4 p-3 h-100"
+                            style="min-height: 200px; background: linear-gradient(
+                                rgba(0, 0, 0, 0.35),
+                                rgba(0, 0, 0, 0.3)
+                              ), url('https://ampervolt1.wordpress.com/wp-content/uploads/2024/07/img_0419-2-kopia.jpg'); background-position: 25% 40%; background-size: 150%; background-repeat: no-repeat;">
+                            <h3>Elektryka</h3>
+                        </div>
+                    </div>
+                    <!-- Right Column (60%) -->
+                    <div class="col-md-4 px-1">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="bg-body-secondary rounded-4 my-1 mt-md-0 mt-2 p-3"
+                                    style="min-height: 200px;  background: linear-gradient(
+                                        rgba(0, 0, 0, 0.35),
+                                        rgba(0, 0, 0, 0.3)
+                                      ), url('https://ampervolt1.wordpress.com/wp-content/uploads/2023/11/3d-rendering-house-model.jpg'); background-position: 20% 30%; background-size: 115%; background-repeat: no-repeat;">
+                                    <h3>Fotowoltaika</h3>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="bg-body-secondary rounded-4 my-1 mb-md-0 mb-2 p-3"
+                                    style="min-height: 200px; background: linear-gradient(
+                                    rgba(0, 0, 0, 0.35),
+                                    rgba(0, 0, 0, 0.3)
+                                  ), url('https://ampervolt1.wordpress.com/wp-content/uploads/2023/11/3d-rendering-house-model.jpg'); background-position: 20% 30%; background-size: 115%; background-repeat: no-repeat;">
+                                    <h3>Coś</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <h1> a</h1>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
