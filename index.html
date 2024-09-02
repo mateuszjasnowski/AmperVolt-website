@@ -47,15 +47,6 @@
             --basis-gray: #A6A6A6;
         }
 
-        #hamburger-status {
-            display: none;
-        }
-
-        .av-nav-logo a {
-            display: flex;
-            flex-direction: row;
-        }
-
         .av-nav-logo a * {
             transition: .5s;
         }
@@ -81,10 +72,6 @@
             height: 40px !important;
         }
 
-        .av-nav-mobile {
-            display: none;
-        }
-
         #hamburger-open {
             transition: .5s;
         }
@@ -93,36 +80,8 @@
             transform: rotate(90deg);
             transition: .5s;
         }
-
-        /* TABLETS */
-        @media (max-width: 700px) {
-            .av-nav-logo a {
-                flex-direction: column;
-            }
-
-        }
-
-        @media (max-width: 550px) {
-            .av-nav-mobile {
-                display: block;
-            }
-
-            .av-nav-btns {
-                display: none;
-            }
-
-            #hamburger-status:checked~.av-nav-btns {
-                display: block;
-            }
-
-            .av-nav-header {
-                justify-content: center !important;
-                flex-direction: column !important;
-            }
-
-            .av-nav-btns {
-                margin-top: 1rem;
-            }
+        #hamburger-status:checked~.av-nav-btns {
+            display: block !important;
         }
     </style>
 </head>
@@ -130,9 +89,9 @@
 <body>
     <header class="p-3 text-bg-dark position-sticky top-0 w-100 z-3">
         <div class="container-lg">
-            <div class="d-flex flex-wrap align-items-center justify-content-between av-nav-header">
+            <div class="d-flex flex-wrap align-items-center justify-content-between av-nav-header flex-column flex-md-row">
                 <div class="av-nav-logo">
-                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <a href="/" class="d-flex flex-column flex-md-row justify-content-center align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                         <!--<svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
                             <use xlink:href="#bootstrap"></use>
                         </svg> TODO use svg logo-->
@@ -143,14 +102,14 @@
                     </a>
                 </div>
 
-                <input type="checkbox" name="hamburger-status" id="hamburger-status" />
-                <div class="av-nav-mobile">
+                <input type="checkbox" class="visually-hidden" name="hamburger-status" id="hamburger-status" />
+                <div class="av-nav-mobile d-block d-md-none">
                     <label for="hamburger-status" id="hamburger-open">
                         <i class="bi bi-list" for="hamburger-status"></i>
                     </label>
                 </div>
 
-                <div class="av-nav-btns">
+                <div class="av-nav-btns d-none d-md-block mt-3 mt-md-0">
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 
                         <li><a href="#" class="nav-link px-2 text-white">Oferta</a></li>
@@ -159,12 +118,12 @@
                             <button type="button" class="btn btn-primary me-2 rounded-4">Kontakt</button>
                         </li>
                         <li>
-                            <div> <!-- TODO correct button display -->
-                                <button class="btn btn-light rounded-circle av-social-btn"
+                            <div class="d-flex gap-2 justify-content-center"> <!-- TODO correct button display -->
+                                <button class="btn btn-light rounded-circle"
                                     href="https://maps.app.goo.gl/kyhmr7DarfsWFWNH9">
                                     <i class="bi bi-geo-alt"></i>
                                 </button>
-                                <button class="btn btn-light rounded-circle av-social-btn">
+                                <button class="btn btn-light rounded-circle">
                                     <i class="bi bi-envelope"></i>
                                 </button>
                             </div>
@@ -195,7 +154,7 @@
             <div class="row">
                 <h1 class="fw-bold"> Nasza Oferta</h1>
             </div>
-            <div class="row container px-0 mx-md-4 mx-0 justify-content-center">
+            <div class="row container px-0 mx-lg-4 mx-0 justify-content-center">
                 <div class="row text-white">
                     <div class="col-md-8">
                         <div class="bg-body-secondary rounded-4 p-4 h-100"
@@ -274,18 +233,128 @@
         </div>
         <div class="container">
             <div class="d-flex flex-lg-row flex-column-reverse justify-content-between">
-                <div class="rounded-2 bg-primary my-1 mx-md-2 p-2 w-100">
+                <div class="rounded-2 my-1 mx-md-2 p-2 w-100 d-flex flex-column align-items-start">
                     <h2>AmperVolt usługi elektryczne</h2>
+                    <div>
+                        <span class="badge rounded-pill text-bg-secondary">NIP: 5662032390</span>
+                        <span class="badge rounded-pill text-bg-secondary">REGON: 524057224</span>
+                    </div>
+                    <div class="d-flex flex-column">
+                        <button type="button" class="btn btn-dark rounded-5 my-2">
+                            <i class="bi bi-envelope"></i> ma.ankiewicz@gmail.com
+                        </button>
+                        <button type="button" class="btn btn-dark rounded-5 my-2">
+                            <i class="bi bi-telephone"></i> +48 798 845 336
+                        </button>
+                    </div>
+                    <hr class="my-4 w-100">
+                    <h2>Znajdź nas na mapach</h2>
+                    <p>Teren działania: Wrocław + okolice 50 km</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d319227.0026246938!2d17.049892299999996!3d51.31184259999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4fa555f94b3ac75b%3A0x533b6b6958dec0fa!2sAmperVolt!5e0!3m2!1spl!2spl!4v1725292344258!5m2!1spl!2spl" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <div class="rounded-2 bg-primary my-1 mx-md-2 p-2 w-100">
+                <div class="my-1 mx-md-2 p-2 w-100">
                     <h2>Formularz kontaktowy</h2>
+                    <hr class="my-4">
+                    <form class="needs-validation" novalidate="">
+                        <div class="row g-3">
+                            <div class="col-sm-12">
+                                <label for="firstName" class="form-label fw-bold">Imię
+                                    <span class="text-body-secondary fw-light">(wymagane)</span>
+                                </label>
+                                <input type="text" class="form-control rounded-4" id="firstName" placeholder="" value=""
+                                    required="">
+                                <div class="invalid-feedback">
+                                    Potrzebujemy twojego imienia do dalszego konatktu.
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <label for="email" class="form-label fw-bold">Email <span
+                                        class="text-body-secondary fw-light">(wymagane)</span></label>
+                                <input type="email" class="form-control rounded-4" id="email" placeholder="twojemail@domena.com" value="" required="">
+                                <div class="invalid-feedback">
+                                    Będziemy się z Tobą kontaktować na podany adress email. Ten nie zdaje się być poprawny
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="country" class="form-label fw-bold">Kategoria
+                                    <span class="text-body-secondary fw-light">(wymagane)</span>
+                                </label>
+                                <select class="form-select form-control rounded-4" id="country" required="">
+                                    <option value="">Wybierz...</option>
+                                    <option value="Instalacje elektryczne">Instalacje elektryczne</option>
+                                    <option value="Instalacje PV">Instalacje PV</option>
+                                    <option value="Instalacje odgromowe">Instalacje odgromowe</option>
+                                    <option value="Ładowarki EV">Ładowarki EV</option>
+                                    <option value="Kuchnie indukcyjne">Kuchnie indukcyjne</option>
+                                    <option value="Systemy zabezpieczen">Systemy zabezpieczen</option>
+                                    <option value="Rozdzielnice">Rozdzielnice</option>
+                                    <option value="Inne">Inne</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Proszę wybierz kategorię której dotyczy zapytanie. Jeżeli żadna kategoria nie pasuje, wybierz opcję 'Inne'
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="state" class="form-label fw-bold">Kiedy chcesz rozpocząć prace?</label>
+                                <input type="date" class="form-control rounded-4">
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="zip" class="form-label fw-bold">Wiadomość
+                                    <span class="text-body-secondary fw-light">(wymagane)</span>
+                                </label>
+                                <textarea type="text" class="form-control rounded-4" id="zip"
+                                    placeholder="Opisz czego potrzebujesz." required="" rows="10"></textarea>
+                                <div class="invalid-feedback">
+                                    Opisz nam proszę czego potrzebujesz.
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="w-100 btn btn-primary btn-lg rounded-5 my-3" type="submit">Wyślij wiadomość</button>
+                    </form>
+                    <hr class="my-4 d-lg-none">
                 </div>
             </div>
         </div>
     </main>
-    <footer style="background-color: var(--ampervolt-black);">
-        AmperVolr
+    <footer class="d-flex justify-content-between text-white p-4 flex-column flex-md-row fw-light" style="background-color: var(--ampervolt-black);">
+        <div class="d-flex flex-column justify-content-center">
+            <span>AmperVolt usługi elektryczne</span>
+            <span>NIP: 5662032390 REGON: 524057224</span>
+        </div>
+        <hr class="my-4 d-md-none">
+        <div class="d-flex flex-column justify-content-center">
+            <a href="mailto:ma.ankiewicz@gmail.com" class="text-white">ma.ankiewicz@gmail.com</a>
+            <a href="callto:+48798845336" class="text-white">+48 798 845 336</a>
+        </div>
     </footer>
+    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+
+    </script>
 </body>
 
 </html>
