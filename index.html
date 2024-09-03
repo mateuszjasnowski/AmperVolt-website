@@ -86,6 +86,7 @@
             transform: rotate(90deg);
             transition: .5s;
         }
+
         #hamburger-status:checked~.av-nav-btns {
             display: block !important;
         }
@@ -97,7 +98,8 @@
         <div class="container-lg">
             <div class="d-flex flex-wrap align-items-center justify-content-between av-nav-header">
                 <div class="av-nav-logo">
-                    <a href="/" class="d-flex flex-column flex-md-row justify-content-center align-items-center mb-0 mb-md-2 mb-lg-0 text-white text-decoration-none">
+                    <a href="/"
+                        class="d-flex flex-column flex-md-row justify-content-center align-items-center mb-0 mb-md-2 mb-lg-0 text-white text-decoration-none">
                         <!--<svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
                             <use xlink:href="#bootstrap"></use>
                         </svg> TODO use svg logo-->
@@ -125,12 +127,10 @@
                         </li>
                         <li>
                             <div class="d-flex gap-2 justify-content-center"> <!-- TODO correct button display -->
-                                <a class="av-social-btn"
-                                    href="https://maps.app.goo.gl/kyhmr7DarfsWFWNH9">
+                                <a class="av-social-btn" href="https://maps.app.goo.gl/kyhmr7DarfsWFWNH9">
                                     <i class="bi bi-geo-alt"></i>
                                 </a>
-                                <a class="av-social-btn"
-                                    href="mailto:ma.ankiewicz@gmail.com">
+                                <a class="av-social-btn" href="mailto:ma.ankiewicz@gmail.com">
                                     <i class="bi bi-envelope"></i>
                                 </a>
                             </div>
@@ -247,7 +247,7 @@
                             <span class="badge rounded-pill text-bg-secondary">NIP: 5662032390</span>
                             <span class="badge rounded-pill text-bg-secondary">REGON: 524057224</span>
                         </div>
-                        <a type="button" class="btn btn-dark rounded-5 my-2" href="mailto:ma.ankiewicz@gmail.com" >
+                        <a type="button" class="btn btn-dark rounded-5 my-2" href="mailto:ma.ankiewicz@gmail.com">
                             <i class="bi bi-envelope mx-1"></i> ma.ankiewicz@gmail.com
                         </a>
                         <a type="button" class="btn btn-dark rounded-5 my-2" href="tel:+48798845336">
@@ -257,7 +257,10 @@
                     <hr class="my-4 w-100">
                     <h2>Znajdź nas na mapach</h2>
                     <p>Teren działania: Wrocław + okolice 50 km</p>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d319227.0026246938!2d17.049892299999996!3d51.31184259999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4fa555f94b3ac75b%3A0x533b6b6958dec0fa!2sAmperVolt!5e0!3m2!1spl!2spl!4v1725292344258!5m2!1spl!2spl" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d319227.0026246938!2d17.049892299999996!3d51.31184259999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4fa555f94b3ac75b%3A0x533b6b6958dec0fa!2sAmperVolt!5e0!3m2!1spl!2spl!4v1725292344258!5m2!1spl!2spl"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="my-1 mx-md-2 p-2 w-100">
                     <h2>Formularz kontaktowy</h2>
@@ -278,9 +281,11 @@
                             <div class="col-12">
                                 <label for="email" class="form-label fw-bold">Email <span
                                         class="text-body-secondary fw-light">(wymagane)</span></label>
-                                <input type="email" class="form-control rounded-4" id="email" placeholder="twojemail@domena.com" value="" required="">
+                                <input type="email" class="form-control rounded-4" id="email"
+                                    placeholder="twojemail@domena.com" value="" required="">
                                 <div class="invalid-feedback">
-                                    Będziemy się z Tobą kontaktować na podany adress email. Ten nie zdaje się być poprawny
+                                    Będziemy się z Tobą kontaktować na podany adress email. Ten nie zdaje się być
+                                    poprawny
                                 </div>
                             </div>
 
@@ -300,7 +305,8 @@
                                     <option value="Inne">Inne</option>
                                 </select>
                                 <div class="invalid-feedback">
-                                    Proszę wybierz kategorię której dotyczy zapytanie. Jeżeli żadna kategoria nie pasuje, wybierz opcję 'Inne'
+                                    Proszę wybierz kategorię której dotyczy zapytanie. Jeżeli żadna kategoria nie
+                                    pasuje, wybierz opcję 'Inne'
                                 </div>
                             </div>
 
@@ -321,14 +327,16 @@
                             </div>
                         </div>
 
-                        <button class="w-100 btn btn-primary btn-lg rounded-5 my-3" type="submit">Wyślij wiadomość</button>
+                        <button class="w-100 btn btn-primary btn-lg rounded-5 my-3" type="submit">Wyślij
+                            wiadomość</button>
                     </form>
                     <hr class="my-4 d-lg-none">
                 </div>
             </div>
         </div>
     </main>
-    <footer class="d-flex justify-content-between text-white p-4 flex-column flex-md-row fw-light" style="background-color: var(--ampervolt-black);">
+    <footer class="d-flex justify-content-between text-white p-4 flex-column flex-md-row fw-light"
+        style="background-color: var(--ampervolt-black);">
         <div class="d-flex flex-column justify-content-center">
             <span>AmperVolt usługi elektryczne</span>
             <span>NIP: 5662032390 REGON: 524057224</span>
@@ -339,6 +347,9 @@
             <a href="tel:+48798845336" class="text-white">+48 798 845 336</a>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (() => {
