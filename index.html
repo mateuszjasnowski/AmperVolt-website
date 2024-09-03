@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="max-image-preview:large">
     <title>AmperVolt</title>
     <!--IF NEEDED-->
@@ -96,7 +96,7 @@
 <body>
     <header class="p-3 text-bg-dark position-sticky top-0 w-100 z-3">
         <div class="container-lg">
-            <div class="d-flex flex-wrap align-items-center justify-content-between av-nav-header">
+            <div class="d-flex flex-wrap align-items-center justify-content-between av-nav-header" id="av-nav-header">
                 <div class="av-nav-logo">
                     <a href="/"
                         class="d-flex flex-column flex-md-row justify-content-center align-items-center mb-0 mb-md-2 mb-lg-0 text-white text-decoration-none">
@@ -259,7 +259,7 @@
                     <p>Teren działania: Wrocław + okolice 50 km</p>
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d319227.0026246938!2d17.049892299999996!3d51.31184259999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4fa555f94b3ac75b%3A0x533b6b6958dec0fa!2sAmperVolt!5e0!3m2!1spl!2spl!4v1725292344258!5m2!1spl!2spl"
-                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-4"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="my-1 mx-md-2 p-2 w-100">
@@ -271,18 +271,17 @@
                                 <label for="firstName" class="form-label fw-bold">Imię
                                     <span class="text-body-secondary fw-light">(wymagane)</span>
                                 </label>
-                                <input type="text" class="form-control rounded-4" id="firstName" placeholder="" value=""
-                                    required="">
+                                <input type="text" class="form-control rounded-4" id="firstName" placeholder="" value="" required="" />
                                 <div class="invalid-feedback">
                                     Potrzebujemy twojego imienia do dalszego konatktu.
                                 </div>
                             </div>
 
                             <div class="col-12">
-                                <label for="email" class="form-label fw-bold">Email <span
-                                        class="text-body-secondary fw-light">(wymagane)</span></label>
+                                <label for="email" class="form-label fw-bold">Email
+                                    <span class="text-body-secondary fw-light">(wymagane)</span></label>
                                 <input type="email" class="form-control rounded-4" id="email"
-                                    placeholder="twojemail@domena.com" value="" required="">
+                                    placeholder="twojemail@domena.com" required autocomplete="email" />
                                 <div class="invalid-feedback">
                                     Będziemy się z Tobą kontaktować na podany adress email. Ten nie zdaje się być
                                     poprawny
@@ -290,10 +289,10 @@
                             </div>
 
                             <div class="col-md-12">
-                                <label for="country" class="form-label fw-bold">Kategoria
+                                <label for="category" class="form-label fw-bold">Kategoria
                                     <span class="text-body-secondary fw-light">(wymagane)</span>
                                 </label>
-                                <select class="form-select form-control rounded-4" id="country" required="">
+                                <select class="form-select form-control rounded-4" id="category" required="">
                                     <option value="">Wybierz...</option>
                                     <option value="Instalacje elektryczne">Instalacje elektryczne</option>
                                     <option value="Instalacje PV">Instalacje PV</option>
@@ -311,15 +310,15 @@
                             </div>
 
                             <div class="col-md-12">
-                                <label for="state" class="form-label fw-bold">Kiedy chcesz rozpocząć prace?</label>
-                                <input type="date" class="form-control rounded-4">
+                                <label for="start-date" class="form-label fw-bold">Kiedy chcesz rozpocząć prace?</label>
+                                <input type="date" class="form-control rounded-4" id="start-date" />
                             </div>
 
                             <div class="col-md-12">
-                                <label for="zip" class="form-label fw-bold">Wiadomość
+                                <label for="message" class="form-label fw-bold">Wiadomość
                                     <span class="text-body-secondary fw-light">(wymagane)</span>
                                 </label>
-                                <textarea type="text" class="form-control rounded-4" id="zip"
+                                <textarea type="text" class="form-control rounded-4" id="message"
                                     placeholder="Opisz czego potrzebujesz." required="" rows="10"></textarea>
                                 <div class="invalid-feedback">
                                     Opisz nam proszę czego potrzebujesz.
