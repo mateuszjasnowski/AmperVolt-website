@@ -91,7 +91,7 @@
         <div class="container-lg">
             <div class="d-flex flex-wrap align-items-center justify-content-between av-nav-header">
                 <div class="av-nav-logo">
-                    <a href="/" class="d-flex justify-content-center align-items-center mb-0 mb-md-2 mb-lg-0 text-white text-decoration-none">
+                    <a href="/" class="d-flex flex-column flex-md-row justify-content-center align-items-center mb-0 mb-md-2 mb-lg-0 text-white text-decoration-none">
                         <!--<svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
                             <use xlink:href="#bootstrap"></use>
                         </svg> TODO use svg logo-->
@@ -103,13 +103,13 @@
                 </div>
 
                 <input type="checkbox" class="visually-hidden" name="hamburger-status" id="hamburger-status" />
-                <div class="av-nav-mobile d-block d-md-none">
+                <div class="av-nav-mobile d-block d-sm-none">
                     <label for="hamburger-status" id="hamburger-open">
                         <i class="bi bi-list" for="hamburger-status"></i>
                     </label>
                 </div>
 
-                <div class="av-nav-btns d-none d-md-block mt-3 mt-md-0">
+                <div class="av-nav-btns d-none d-sm-block mt-3 mt-md-0">
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 
                         <li><a href="#" class="nav-link px-2 text-white">Oferta</a></li>
@@ -235,16 +235,16 @@
             <div class="d-flex flex-lg-row flex-column-reverse justify-content-between">
                 <div class="rounded-2 my-1 mx-md-2 p-2 w-100 d-flex flex-column align-items-start">
                     <h2>AmperVolt usługi elektryczne</h2>
-                    <div>
-                        <span class="badge rounded-pill text-bg-secondary">NIP: 5662032390</span>
-                        <span class="badge rounded-pill text-bg-secondary">REGON: 524057224</span>
-                    </div>
                     <div class="d-flex flex-column">
+                        <div>
+                            <span class="badge rounded-pill text-bg-secondary">NIP: 5662032390</span>
+                            <span class="badge rounded-pill text-bg-secondary">REGON: 524057224</span>
+                        </div>
                         <button type="button" class="btn btn-dark rounded-5 my-2">
-                            <i class="bi bi-envelope"></i> ma.ankiewicz@gmail.com
+                            <i class="bi bi-envelope mx-1"></i> ma.ankiewicz@gmail.com
                         </button>
                         <button type="button" class="btn btn-dark rounded-5 my-2">
-                            <i class="bi bi-telephone"></i> +48 798 845 336
+                            <i class="bi bi-telephone mx-1"></i> +48 798 845 336
                         </button>
                     </div>
                     <hr class="my-4 w-100">
@@ -332,7 +332,6 @@
             <a href="callto:+48798845336" class="text-white">+48 798 845 336</a>
         </div>
     </footer>
-    <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (() => {
