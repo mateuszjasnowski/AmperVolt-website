@@ -312,7 +312,12 @@
                 <div class="my-1 mx-md-2 p-2 w-100">
                     <h2>Formularz kontaktowy</h2>
                     <hr class="my-4">
-                    <form class="needs-validation" novalidate="">
+                    <div class="font-monospace av-js-not-loaded" data-object-to-load="av-contact-form">
+                        <p>Nie można załadować formularza kontaktowego ze względu na błąd JavaScript.</p>
+                        <p>Sprawdź czy twoja przeglądarka ma właczoną obsługę JavaScript lub skontaktuj się z nami droga mailową:</p>
+                        <a href="mailto:ma.ankiewicz@gmail.com">ma.ankiewicz@gmail.com</a>
+                    </div>
+                    <form class="needs-validation d-none" novalidate="" id="av-contact-form">
                         <div class="row g-3">
                             <div class="col-sm-12">
                                 <div class="form-floating">
@@ -409,12 +414,12 @@
     <script>
         window.addEventListener('scroll', function() {
             var scrollPosition = window.scrollY || document.documentElement.scrollTop;
-            var triggerPosition = 110;
             var navHeader = document.getElementById("av-nav-header");
             var lowerLogo = document.getElementById("av-lower-logo");
-            var transparentClassName = "av-transparent-nav-header";
-            var originClassName = "text-bg-dark";
-            var notVisibleClassName = "d-none";
+            const triggerPosition = 110;
+            const transparentClassName = "av-transparent-nav-header";
+            const originClassName = "text-bg-dark";
+            const notVisibleClassName = "d-none";
 
             if (navHeader.classList.contains(originClassName) && scrollPosition > triggerPosition + 10) {
                 navHeader.classList.replace(originClassName, transparentClassName);
@@ -426,6 +431,17 @@
             }
 
         });
+
+    </script>
+    <script>
+        function loadJsRequiredElements(object) {
+            var objectToLoad = object.dataset.objectToLoad;
+            document.getElementById(objectToLoad).classList.remove("d-none")
+            object.remove();
+        }
+
+        var jsNotLoadedItems = Array.prototype.slice.call(document.getElementsByClassName("av-js-not-loaded"))
+        jsNotLoadedItems.forEach(loadJsRequiredElements);
     </script>
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
