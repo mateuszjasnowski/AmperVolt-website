@@ -90,6 +90,19 @@
         #hamburger-status:checked~.av-nav-btns {
             display: block !important;
         }
+
+        .av-service-tile {
+            min-height: 360px !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+        }
+
+        @media (min-width: 768px) {
+            .av-service-tile {
+                min-height: 200px !important;
+            }
+        }
+
     </style>
 </head>
 
@@ -143,7 +156,7 @@
     <main>
         <div class="container mw-100 px-0 mx-0">
             <div class="row w-100 mx-0 px-0 py-5 d-flex align-items-center"
-                style="background: linear-gradient(
+                style="height: 350px; background: linear-gradient(
                     rgba(146, 128, 110, 0.35),
                     rgba(146, 128, 110, 0.3)
                 ), url('https://ampervolt1.wordpress.com/wp-content/uploads/2023/11/pexels-photo-18306342.jpeg'); background-position: 5% 40%; background-size: cover; background-repeat: no-repeat;">
@@ -164,11 +177,11 @@
             <div class="px-0 mx-lg-4 mx-0 justify-content-center">
                 <div class="row text-white">
                     <div class="col-md-8 col px-1">
-                        <div class="bg-body-secondary rounded-4 p-4 h-100"
-                            style="min-height: 200px; background: linear-gradient(
+                        <div class="bg-body-secondary rounded-4 p-4 h-100 av-service-tile"
+                            style="background: linear-gradient(
                                     rgba(17, 24, 31, 0.5),
                                     rgba(17, 24, 31, 0.5)
-                                ), url('https://ampervolt1.wordpress.com/wp-content/uploads/2024/07/img_0419-2-kopia.jpg'); background-position: 25% 40%; background-size: cover; background-repeat: no-repeat;">
+                                ), url('https://ampervolt1.wordpress.com/wp-content/uploads/2024/07/img_0419-2-kopia.jpg'); background-position: 25% 40%; ">
                             <h2 class="fw-bold">Elektryka</h3>
                             <hr class="my-3 border-3">
                             <div class="d-flex flex-column flex-md-row">
@@ -190,11 +203,11 @@
                     <div class="col-md-4 px-1">
                         <div class="row">
                             <div class="col-12">
-                                <div class="bg-body-secondary rounded-4 my-1 mt-md-0 mt-2 p-3"
-                                    style="min-height: 200px;  background: linear-gradient(
+                                <div class="bg-body-secondary rounded-4 my-1 mt-md-0 mt-2 p-3 av-service-tile"
+                                    style="background: linear-gradient(
                                             rgba(17, 24, 31, 0.5),
                                             rgba(17, 24, 31, 0.5)
-                                        ), url('https://ampervolt1.wordpress.com/wp-content/uploads/2023/11/3d-rendering-house-model.jpg'); background-position: 20% 30%; background-size: cover; background-repeat: no-repeat;">
+                                        ), url('https://ampervolt1.wordpress.com/wp-content/uploads/2023/11/3d-rendering-house-model.jpg'); background-position: 20% 30%;">
                                     <h2 class="fw-bold">Fotowoltaika</h2>
                                     <hr class="my-3 border-3">
                                     <ul class="px-2 px-md-5">
@@ -206,11 +219,11 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <div class="bg-body-secondary rounded-4 my-1 mb-md-0 mb-2 p-3"
-                                    style="min-height: 200px; background: linear-gradient(
+                                <div class="bg-body-secondary rounded-4 my-1 mb-md-0 mb-2 p-3 av-service-tile"
+                                    style="background: linear-gradient(
                                         rgba(17, 24, 31, 0.5),
                                         rgba(17, 24, 31, 0.5)
-                                    ), url('https://ampervolt1.wordpress.com/wp-content/uploads/2023/11/3d-rendering-house-model.jpg'); background-position: 20% 30%; background-size: cover; background-repeat: no-repeat;">
+                                    ), url('https://ampervolt1.wordpress.com/wp-content/uploads/2023/11/3d-rendering-house-model.jpg'); background-position: 20% 30%;">
                                     <h2 class="fw-bold">Coś</h3>
                                     <hr class="my-3 border-3">
                                     <ul class="px-2 px-md-5">
@@ -238,7 +251,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container mt-3">
             <div class="d-flex flex-lg-row flex-column-reverse justify-content-between">
                 <div class="rounded-2 my-1 mx-md-2 p-2 w-100 d-flex flex-column align-items-start">
                     <h2>AmperVolt usługi elektryczne</h2>
