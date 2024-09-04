@@ -268,60 +268,70 @@
                     <form class="needs-validation" novalidate="">
                         <div class="row g-3">
                             <div class="col-sm-12">
-                                <label for="firstName" class="form-label fw-bold">Imię
-                                    <span class="text-body-secondary fw-light">(wymagane)</span>
-                                </label>
-                                <input type="text" class="form-control rounded-4" id="firstName" placeholder="" value="" required="" />
-                                <div class="invalid-feedback">
-                                    Potrzebujemy twojego imienia do dalszego konatktu.
+                                <div class="form-floating">
+                                    <input type="text" class="form-control rounded-4" id="firstName" placeholder="" value="" required="" />
+                                    <label for="firstName" class="form-label fw-bold">Imię
+                                        <span class="text-body-secondary fw-light">(wymagane)</span>
+                                    </label>
+                                    <div class="invalid-feedback px-2">
+                                        Potrzebujemy twojego imienia do dalszego konatktu.
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="col-12">
-                                <label for="email" class="form-label fw-bold">Email
-                                    <span class="text-body-secondary fw-light">(wymagane)</span></label>
-                                <input type="email" class="form-control rounded-4" id="email"
-                                    placeholder="twojemail@domena.com" required autocomplete="email" />
-                                <div class="invalid-feedback">
-                                    Będziemy się z Tobą kontaktować na podany adress email. Ten nie zdaje się być
-                                    poprawny
+                                <div class="form-floating">
+                                    <input type="email" class="form-control rounded-4" id="email"
+                                        placeholder="twojemail@domena.com" required autocomplete="email" />
+                                    <label for="email" class="form-label fw-bold">Email
+                                        <span class="text-body-secondary fw-light">(wymagane)</span></label>
+                                        <div class="invalid-feedback px-2">
+                                            Będziemy się z Tobą kontaktować na podany adress email. Ten nie zdaje się być
+                                            poprawny
+                                        </div>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
-                                <label for="category" class="form-label fw-bold">Kategoria
-                                    <span class="text-body-secondary fw-light">(wymagane)</span>
-                                </label>
-                                <select class="form-select form-control rounded-4" id="category" required="">
-                                    <option value="">Wybierz...</option>
-                                    <option value="Instalacje elektryczne">Instalacje elektryczne</option>
-                                    <option value="Instalacje PV">Instalacje PV</option>
-                                    <option value="Instalacje odgromowe">Instalacje odgromowe</option>
-                                    <option value="Ładowarki EV">Ładowarki EV</option>
-                                    <option value="Kuchnie indukcyjne">Kuchnie indukcyjne</option>
-                                    <option value="Systemy zabezpieczen">Systemy zabezpieczen</option>
-                                    <option value="Rozdzielnice">Rozdzielnice</option>
-                                    <option value="Inne">Inne</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    Proszę wybierz kategorię której dotyczy zapytanie. Jeżeli żadna kategoria nie
-                                    pasuje, wybierz opcję 'Inne'
+                                <div class="form-floating">
+                                    <select class="form-select form-control rounded-4" id="category" required="">
+                                        <option disabled selected value></option>
+                                        <option value="Instalacje elektryczne">Instalacje elektryczne</option>
+                                        <option value="Instalacje PV">Instalacje PV</option>
+                                        <option value="Instalacje odgromowe">Instalacje odgromowe</option>
+                                        <option value="Ładowarki EV">Ładowarki EV</option>
+                                        <option value="Kuchnie indukcyjne">Kuchnie indukcyjne</option>
+                                        <option value="Systemy zabezpieczen">Systemy zabezpieczen</option>
+                                        <option value="Rozdzielnice">Rozdzielnice</option>
+                                        <option value="Inne">Inne</option>
+                                    </select>
+                                    <label for="category" class="form-label fw-bold" style="color: rgba(var(--bs-body-color-rgb),1) !important;">Kategoria
+                                        <span class="text-body-secondary fw-light">(wymagane)</span>
+                                    </label>
+                                    <div class="invalid-feedback px-2">
+                                        Proszę wybierz kategorię której dotyczy zapytanie. Jeżeli żadna kategoria nie
+                                        pasuje, wybierz opcję 'Inne'
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
-                                <label for="start-date" class="form-label fw-bold">Kiedy chcesz rozpocząć prace?</label>
-                                <input type="date" class="form-control rounded-4" id="start-date" />
+                                <div class="form-floating">
+                                    <input type="date" class="form-control rounded-4" id="start-date"/>
+                                    <label for="start-date" class="form-label fw-bold" style="color: rgba(var(--bs-body-color-rgb),1) !important;">Kiedy chcesz rozpocząć prace?</label>
+                                </div>
                             </div>
 
                             <div class="col-md-12">
-                                <label for="message" class="form-label fw-bold">Wiadomość
-                                    <span class="text-body-secondary fw-light">(wymagane)</span>
-                                </label>
-                                <textarea type="text" class="form-control rounded-4" id="message"
-                                    placeholder="Opisz czego potrzebujesz." required="" rows="10"></textarea>
-                                <div class="invalid-feedback">
-                                    Opisz nam proszę czego potrzebujesz.
+                                <div class="form-floating">
+                                    <textarea type="text" class="form-control rounded-4" id="message"
+                                    placeholder="Opisz czego potrzebujesz." required="" rows="40" style="height: 220px;"></textarea>
+                                    <label for="message" class="form-label fw-bold">Wiadomość
+                                        <span class="text-body-secondary fw-light">(wymagane)</span>
+                                    </label>
+                                    <div class="invalid-feedback px-2">
+                                        Opisz nam proszę czego potrzebujesz.
+                                    </div>
                                 </div>
                             </div>
                         </div>
