@@ -90,6 +90,15 @@
             align-items: center;
         }
 
+        .av-pill-copy {
+            cursor: pointer;
+        }
+
+        .av-pill-copy:hover{
+            color: var(--ampervolt-green) !important;
+        }
+
+
         #hamburger-status:checked~.av-nav-mobile #hamburger-open {
             transform: rotate(90deg);
             transition: .5s;
@@ -313,8 +322,8 @@
                     <h2>AmperVolt usługi elektryczne</h2>
                     <div class="d-flex flex-column">
                         <div class="my-2">
-                            <span class="badge rounded-pill text-bg-secondary">NIP: 5662032390</span>
-                            <span class="badge rounded-pill text-bg-secondary">REGON: 524057224</span>
+                            <span class="badge rounded-pill text-bg-secondary av-pill-copy" id="copy-tax-id-num" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Skopiowano!" data-av-copy-data="5662032390" onclick="copyDataWithPopover('copy-tax-id-num')">NIP: 5662032390 <i class="bi bi-copy p-1"></i></span>
+                            <span class="badge rounded-pill text-bg-secondary av-pill-copy" id="copy-tex-reg-num" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Skopiowano!" data-av-copy-data="524057224" onclick="copyDataWithPopover('copy-tex-reg-num')">REGON: 524057224 <i class="bi bi-copy p-1"></i></span>
                         </div>
                         <a type="button" class="btn btn-dark rounded-5 my-2" href="mailto:ma.ankiewicz@gmail.com">
                             <i class="bi bi-envelope mx-1"></i> ma.ankiewicz@gmail.com
@@ -441,6 +450,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script>
+        function copyDataWithPopover(popoverId){
+
+            var object = document.getElementById(popoverId);
+            var copyValue = object.dataset.avCopyData;
+            var idMarker = "#" + popoverId
+            navigator.clipboard.writeText(copyValue).then(() => {
+                const popover = new bootstrap.Popover(idMarker);
+                popover.show();
+                setTimeout(() => {
+                    popover.dispose();
+                }, 800);
+            }).catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+
+        }
+
+    </script>
     <script>
         window.addEventListener('scroll', function() {
             var scrollPosition = window.scrollY || document.documentElement.scrollTop;
