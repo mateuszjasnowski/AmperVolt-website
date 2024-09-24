@@ -69,4 +69,3 @@ jobs:
           # cc: kyloren@example.com,leia@example.com
           bcc: ${{secrets.MAIL_USERNAME}}
           # attachments: attachments.zip,git.diff,./dist/static/*.js
-          nodemailerlog: true
