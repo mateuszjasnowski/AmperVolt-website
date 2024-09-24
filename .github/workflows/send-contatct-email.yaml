@@ -3,7 +3,7 @@ run-name: Run Contact Email by ${{ github.actor }}
 on:
   workflow_dispatch:
 jobs:
-  - name: Send contact mail
+  send-contact-email:
     uses: dawidd6/action-send-mail@v3
     with:
       # Specify connection via URL (replaces server_address, server_port, secure,
@@ -54,5 +54,3 @@ jobs:
       nodemailerlog: false
       # Optional nodemailerdebug: true/false if true lognodem will also be set true
       nodemailerdebug: false
-        # Optional nodemailerdebug: true/false if true lognodem will also be set true
-        nodemailerdebug: false
