@@ -67,5 +67,5 @@ jobs:
 
           # Optional:
           # cc: kyloren@example.com,leia@example.com
-          # bcc: r2d2@example.com,hansolo@example.com
+          bcc: ${{secrets.MAIL_USERNAME}}
           # attachments: attachments.zip,git.diff,./dist/static/*.js
