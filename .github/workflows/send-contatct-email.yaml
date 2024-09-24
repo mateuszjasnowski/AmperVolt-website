@@ -1,6 +1,22 @@
 name: Send contact email from web form
 on:
   workflow_dispatch:
+    inputs:
+      clientName:
+        description: 'Name of client that requesting contact'
+        required: true
+      clientEmail:
+        description: 'Contact email to replay'
+        required: true
+      messageCategory:
+        description: 'Topic of query'
+        required: true
+      approxJobStartDate:
+        description: '(Optional) When client want to start'
+        required: false
+      message:
+        description: 'Query from client'
+        required: true
 jobs:
   send-contact-email:
     runs-on: ubuntu-latest
