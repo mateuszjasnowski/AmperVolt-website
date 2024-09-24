@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="max-image-preview:large">
+    <meta name="theme-color" content="#11181f" />
+    <title>AmperVolt</title>
+    <!--IF NEEDED-->
+    <link rel="dns-prefetch" href="//s0.wp.com">
+    <link rel="dns-prefetch" href="//s.pubmine.com">
+    <link rel="dns-prefetch" href="//x.bidswitch.net">
+    <link rel="dns-prefetch" href="//static.criteo.net">
+    <link rel="dns-prefetch" href="//ib.adnxs.com">
+    <link rel="dns-prefetch" href="//aax.amazon-adsystem.com">
+    <link rel="dns-prefetch" href="//bidder.criteo.com">
+    <link rel="dns-prefetch" href="//cas.criteo.com">
+    <link rel="dns-prefetch" href="//gum.criteo.com">
+    <link rel="dns-prefetch" href="//ads.pubmatic.com">
+    <link rel="dns-prefetch" href="//gads.pubmatic.com">
+    <link rel="dns-prefetch" href="//tpc.googlesyndication.com">
+    <link rel="dns-prefetch" href="//ad.doubleclick.net">
+    <link rel="dns-prefetch" href="//googleads.g.doubleclick.net">
+    <link rel="dns-prefetch" href="//www.googletagservices.com">
+    <link rel="dns-prefetch" href="//cdn.switchadhub.com">
+    <link rel="dns-prefetch" href="//delivery.g.switchadhub.com">
+    <link rel="dns-prefetch" href="//delivery.swid.switchadhub.com">
+    <link rel="dns-prefetch" href="//a.teads.tv">
+    <link rel="dns-prefetch" href="//prebid.media.net">
+    <link rel="dns-prefetch" href="//adserver-us.adtech.advertising.com">
+    <link rel="dns-prefetch" href="//fastlane.rubiconproject.com">
+    <link rel="dns-prefetch" href="//prebid-server.rubiconproject.com">
+    <link rel="dns-prefetch" href="//hb-api.omnitagjs.com">
+    <link rel="dns-prefetch" href="//mtrx.go.sonobi.com">
+    <link rel="dns-prefetch" href="//apex.go.sonobi.com">
+    <link rel="dns-prefetch" href="//u.openx.net">
+    <!--IF NEEDED-->
+    <link rel="icon" type="image/x-icon" href="./img/favicon.png"> <!--TODO-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        :root {
+            --ampervolt-blue: #005ae1;
+            --ampervolt-black: #11181f;
+            --ampervolt-white: #ffffff;
+            --ampervolt-green: #5be2d7;
+        }
+
+        .av-nav-logo a * {
+            transition: .5s;
+        }
+
+        .av-nav-logo a:hover>* {
+            filter: drop-shadow(0px 2px 5px var(--ampervolt-green));
+            transition: .5s;
+            scale: 1.05;
+        }
+
+        .av-nav-btns a:hover {
+            filter: drop-shadow(0px 2px 5px var(--ampervolt-green));
+            scale: 1.02;
+            transition: .5s;
+        }
+
+        .av-nav-btns a {
+            transition: .5s;
+        }
+
+        .av-social-btn {
+            width: 40px !important;
+            height: 40px !important;
+            background-color: var(--ampervolt-white);
+            color: black;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #hamburger-open {
+            transition: .5s;
+            width: 40px !important;
+            height: 40px !important;
+            font-size: 22px;
+            font-weight: 900;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .av-pill-copy {
+            cursor: pointer;
+        }
+
+        .av-pill-copy:hover{
+            color: var(--ampervolt-green) !important;
+        }
+
+
+        #hamburger-status:checked~.av-nav-mobile #hamburger-open {
+            transform: rotate(90deg);
+            transition: .5s;
+        }
+
+        #hamburger-status:checked~.av-nav-btns {
+            display: block !important;
+        }
+
+        .av-service-tile {
+            min-height: 360px !important;
+            background-size: cover !important;
+            background-repeat: no-repeat !important;
+            padding-right: 0px;
+        }
+
+        #av-nav-header {
+            transition: .2s;
+        }
+
+        .av-transparent-nav-header {
+            transition: .5s;
+        }
+
+        /* .av-transparent-nav-header #hamburger-open { TODO remove if hamburger won't change for scrolled
+            color: black !important;
+            background-color: #fff;
+        } */
+
+        .av-nav-btns {
+            width: 100%;
+        }
+
+        .av-footer-cat-name {
+            color: var(--ampervolt-green) !important;
+            filter: drop-shadow(0px 2px 5px var(--ampervolt-green)) !important;
+            position: relative;
+            margin-bottom: 5px;
+            background-image: linear-gradient(to right,var(--ampervolt-green),var(--ampervolt-green));
+            background-position: 0 100%;
+            background-size: 40% 2px;
+            background-repeat: no-repeat;
+            padding-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .av-transparent-nav-header {
+                padding-top: 0px !important;
+                padding-bottom: 0px !important;
+                transition: .5s;
+            }
+            .av-transparent-nav-header #av-lower-logo {
+                display: none;
+            }
+        }
+
+        @media (min-width: 575px) {
+            .av-nav-btns {
+                width: auto;
+            }
+        }
+
+        @media (min-width: 768px) {
+
+            .av-service-tile {
+                min-height: 200px !important;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="p-3 text-bg-dark position-sticky top-0 w-100 z-3" id="av-nav-header">
+        <div class="container-lg">
+            <div class="d-flex flex-wrap align-items-center justify-content-between">
+                <div class="av-nav-logo">
+                    <a href="/"
+                        class="d-flex flex-column flex-md-row justify-content-center align-items-center mb-0 mb-md-2 mb-lg-0 text-white text-decoration-none">
+                        <!--<svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                            <use xlink:href="#bootstrap"></use>
+                        </svg> TODO use svg logo-->
+                        <img src="https://ampervolt1.wordpress.com/wp-content/uploads/2023/11/podstawowe-sygnet-3.png?w=300"
+                            width="80px" height="80px">
+                        <img src="https://ampervolt1.wordpress.com/wp-content/uploads/2023/11/podstawowe-nazwa-4100041405-e1721157723486.png?w=1024"
+                            height="20px" id="av-lower-logo">
+                    </a>
+                </div>
+
+                <input type="checkbox" class="visually-hidden" name="hamburger-status" id="hamburger-status" placeholder="" title="hamburger-open"/>
+                <div class="av-nav-mobile d-block d-sm-none">
+                    <label for="hamburger-status" id="hamburger-open">
+                        <i class="bi bi-list" for="hamburger-status"></i>
+                    </label>
+                </div>
+
+                <div class="av-nav-btns d-none d-sm-block mt-3 mt-md-0">
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+
+                        <li><a href="#oferta" class="nav-link px-2 text-white">Oferta</a></li>
+                        <li><a href="#lokalizacja" class="nav-link px-2 text-white">Lokalizacja</a></li>
+                        <li>
+                            <a type="button" class="btn btn-primary me-2 rounded-4" href="#kontakt">Kontakt</a>
+                        </li>
+                        <li>
+                            <div class="d-flex gap-2 justify-content-center"> <!-- TODO correct button display -->
+                                <a class="av-social-btn" href="https://maps.app.goo.gl/kyhmr7DarfsWFWNH9">
+                                    <i class="bi bi-geo-alt"></i>
+                                </a>
+                                <a class="av-social-btn" href="mailto:ma.ankiewicz@gmail.com">
+                                    <i class="bi bi-envelope"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container mw-100 px-0 mx-0">
+            <div class="row w-100 mx-0 px-0 py-5 d-flex align-items-center"
+                style="height: 350px; background: linear-gradient(
+                    rgba(146, 128, 110, 0.35),
+                    rgba(146, 128, 110, 0.3)
+                ), url('https://ampervolt1.wordpress.com/wp-content/uploads/2023/11/pexels-photo-18306342.jpeg'); background-position: 5% 40%; background-size: cover; background-repeat: no-repeat;">
+                <div class="d-flex flex-column text-white text-center fw-bolder">
+                    <h1 class="pb-3 fw-bold">
+                        Usługi elektryczne AmperVolt</h1>
+                    <p class="text-white font-monospace fw-light" style="font-size: large;">Szukasz wykonawcy usług
+                        elektrycznych?<br>Wyjdziemy naprzeciw Twoim oczekiwaniom,<br>przedstawiając rozwiązania szyte na
+                        miarę Twoich potrzeb</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="row mx-1 mx-md-4 my-3" id="oferta">
+            <h1 class="fw-bold"> Nasza Oferta</h1>
+        </div>
+        <div class="container">
+            <div class="px-1 mx-lg-4 mx-1 justify-content-center">
+                <div class="row text-white">
+                    <div class="col-md-8 col px-1">
+                        <div class="bg-body-secondary rounded-4 p-4 h-100 av-service-tile"
+                            style="background: linear-gradient(
+                                    rgba(17, 24, 31, 0.5),
+                                    rgba(17, 24, 31, 0.5)
+                                ), url('https://ampervolt1.wordpress.com/wp-content/uploads/2024/07/img_0419-2-kopia.jpg'); background-position: 25% 40%; ">
+                            <h2 class="fw-bold">Elektryka</h3>
+                            <hr class="my-3 border-3">
+                            <div class="d-flex flex-column flex-md-row">
+                                <ul class="px-2 px-lg-5 mb-0">
+                                    <li class="list-group-item">Montaż instalacji elektrycznych</li>
+                                    <li class="list-group-item">Pomiary elektryczne</li>
+                                    <li class="list-group-item">Modernizacje instalacji</li>
+                                    <li class="list-group-item">Kompleksowe przeglądy</li>
+                                </ul>
+                                <ul class="px-2 px-lg-5 mt-0">
+                                    <li class="list-group-item">Instalacje odgromowe</li>
+                                    <li class="list-group-item">Ładowarki EV</li>
+                                    <li class="list-group-item">Kuchnie indukcyjne</li>
+                                    <li class="list-group-item">Rozdzielnice</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 px-1">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="bg-body-secondary rounded-4 my-1 mt-md-0 mt-2 p-3 av-service-tile"
+                                    style="background: linear-gradient(
+                                            rgba(17, 24, 31, 0.5),
+                                            rgba(17, 24, 31, 0.5)
+                                        ), url('https://ampervolt1.wordpress.com/wp-content/uploads/2023/11/3d-rendering-house-model.jpg'); background-position: 20% 30%;">
+                                    <h2 class="fw-bold">Fotowoltaika</h2>
+                                    <hr class="my-3 border-3">
+                                    <ul class="px-2 px-md-5">
+                                        <li class="list-group-item">Montaż</li>
+                                        <li class="list-group-item">Przeglądy</li>
+                                        <li class="list-group-item">Kompleksowy serwis</li>
+                                        <li class="list-group-item">Rozszerzenie instalacji</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="bg-body-secondary rounded-4 my-1 mb-md-0 mb-2 p-3 av-service-tile"
+                                    style="background: linear-gradient(
+                                        rgba(17, 24, 31, 0.5),
+                                        rgba(17, 24, 31, 0.5)
+                                    ), url('https://ampervolt1.wordpress.com/wp-content/uploads/2023/11/3d-rendering-house-model.jpg'); background-position: 20% 30%;">
+                                    <h2 class="fw-bold">Coś</h3>
+                                    <hr class="my-3 border-3">
+                                    <ul class="px-2 px-md-5">
+                                        <li class="list-group-item">Montaż</li>
+                                        <li class="list-group-item">Przeglądy</li>
+                                        <li class="list-group-item">Kompleksowy serwis</li>
+                                        <li class="list-group-item">Rozszerzenie instalacji</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mw-100 px-0 mx-0">
+            <div class="row w-100 mx-0 px-0 d-flex align-items-center mt-3 p-5"
+                style="background-color: var(--ampervolt-black);">
+                <div class="d-flex flex-column text-white text-center fw-bolder">
+                    <h1 class="pb-3 fw-bold">
+                        Jesteś zainteresowany naszą ofertą?</h1>
+                    <p class="text-white fw-light" style="font-size: large;">
+                        Skontaktuj się z nami w celu przygotowania indywidualnej wyceny.</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="container mt-3">
+            <div class="d-flex flex-lg-row flex-column-reverse justify-content-between">
+                <div class="rounded-2 my-1 mx-md-2 p-2 w-100 d-flex flex-column align-items-start">
+                    <h2>AmperVolt usługi elektryczne</h2>
+                    <div class="d-flex flex-column">
+                        <div class="my-2">
+                            <span class="badge rounded-pill text-bg-secondary av-pill-copy" id="copy-tax-id-num" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Skopiowano!" data-av-copy-data="5662032390" onclick="copyDataWithPopover('copy-tax-id-num')">NIP: 5662032390 <i class="bi bi-copy p-1"></i></span>
+                            <span class="badge rounded-pill text-bg-secondary av-pill-copy" id="copy-tex-reg-num" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Skopiowano!" data-av-copy-data="524057224" onclick="copyDataWithPopover('copy-tex-reg-num')">REGON: 524057224 <i class="bi bi-copy p-1"></i></span>
+                        </div>
+                        <a type="button" class="btn btn-dark rounded-5 my-2" href="mailto:ma.ankiewicz@gmail.com">
+                            <i class="bi bi-envelope mx-1"></i> ma.ankiewicz@gmail.com
+                        </a>
+                        <a type="button" class="btn btn-dark rounded-5 my-2" href="tel:+48798845336">
+                            <i class="bi bi-telephone mx-1"></i> +48 798 845 336
+                        </a>
+                    </div>
+                    <hr class="my-4 w-100" id="lokalizacja">
+                    <h2>Znajdź nas na mapach</h2>
+                    <p>Teren działania: Wrocław + okolice 50 km</p>
+                    <div class="font-monospace av-js-not-loaded" data-object-to-load="av-gmap">
+                        <p>Nie można załadować mapy ze względu na błąd JavaScript.</p>
+                        <p>Sprawdź czy twoja przeglądarka ma właczoną obsługę JavaScript lub skorzystaj z mapy w zewnętrznej karcie:</p>
+                        <a href="https://maps.app.goo.gl/kyhmr7DarfsWFWNH9">AmperVolt w Google Maps</a>
+                    </div>
+                    <iframe id="av-gmap"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d319227.0026246938!2d17.049892299999996!3d51.31184259999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4fa555f94b3ac75b%3A0x533b6b6958dec0fa!2sAmperVolt!5e0!3m2!1spl!2spl!4v1725292344258!5m2!1spl!2spl"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" class="rounded-4 d-none"
+                        referrerpolicy="no-referrer-when-downgrade" title="google-map-view"></iframe>
+                </div>
+                <div class="my-1 mx-md-2 p-2 w-100" id="kontakt">
+                    <h2>Formularz kontaktowy</h2>
+                    <hr class="my-4">
+                    <div class="font-monospace av-js-not-loaded" data-object-to-load="av-contact-form">
+                        <p>Nie można załadować formularza kontaktowego ze względu na błąd JavaScript.</p>
+                        <p>Sprawdź czy twoja przeglądarka ma właczoną obsługę JavaScript lub skontaktuj się z nami droga mailową:</p>
+                        <a href="mailto:ma.ankiewicz@gmail.com">ma.ankiewicz@gmail.com</a>
+                    </div>
+                    <form class="needs-validation d-none" novalidate="" id="av-contact-form">
+                        <div class="row g-3">
+                            <div class="col-sm-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control rounded-4" id="firstName" placeholder="" value="" required="" />
+                                    <label for="firstName" class="form-label fw-bold">Imię
+                                        <span class="text-body-secondary fw-light">(wymagane)</span>
+                                    </label>
+                                    <div class="invalid-feedback px-2">
+                                        Potrzebujemy Twojego imienia do dalszego kontaktu.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control rounded-4" id="email"
+                                        placeholder="twojemail@domena.com" required autocomplete="email" />
+                                    <label for="email" class="form-label fw-bold">Email
+                                        <span class="text-body-secondary fw-light">(wymagane)</span></label>
+                                        <div class="invalid-feedback px-2">
+                                            Będziemy się z Tobą kontaktować na podany adres email. Ten nie zdaje się być
+                                            poprawny.
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <select class="form-select form-control rounded-4" id="category" required="">
+                                        <option disabled selected value>Wybierz...</option>
+                                        <option value="Instalacje elektryczne">Instalacje elektryczne</option>
+                                        <option value="Instalacje PV">Instalacje PV</option>
+                                        <option value="Instalacje odgromowe">Instalacje odgromowe</option>
+                                        <option value="Ładowarki EV">Ładowarki EV</option>
+                                        <option value="Kuchnie indukcyjne">Kuchnie indukcyjne</option>
+                                        <option value="Systemy zabezpieczen">Systemy zabezpieczen</option>
+                                        <option value="Rozdzielnice">Rozdzielnice</option>
+                                        <option value="Inne">Inne</option>
+                                    </select>
+                                    <label for="category" class="form-label fw-bold" style="color: rgba(var(--bs-body-color-rgb),1) !important;">Kategoria
+                                        <span class="text-body-secondary fw-light">(wymagane)</span>
+                                    </label>
+                                    <div class="invalid-feedback px-2">
+                                        Proszę wybierz kategorię której dotyczy zapytanie. Jeżeli żadna kategoria nie
+                                        pasuje, wybierz opcję 'Inne'
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <input type="date" class="form-control rounded-4" id="start-date"/>
+                                    <label for="start-date" class="form-label fw-bold" style="color: rgba(var(--bs-body-color-rgb),1) !important;">Kiedy chcesz rozpocząć prace?</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <textarea type="text" class="form-control rounded-4" id="message"
+                                    placeholder="Opisz czego potrzebujesz." required="" rows="40" style="height: 220px;"></textarea>
+                                    <label for="message" class="form-label fw-bold">Wiadomość
+                                        <span class="text-body-secondary fw-light">(wymagane)</span>
+                                    </label>
+                                    <div class="invalid-feedback px-2">
+                                        Opisz nam proszę czego potrzebujesz.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="w-100 btn btn-primary btn-lg rounded-5 my-3" type="submit">Wyślij
+                            wiadomość</button>
+                    </form>
+                    <hr class="my-4 d-lg-none">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="d-flex justify-content-center text-white py-4 flex-column flex-sm-row fw-light px-5 align-items-start"
+        style="background-color: var(--ampervolt-black);">
+        <div class="d-flex flex-column justify-content-center mx-0 mx-md-5 px-lg-5 px-3">
+            <h5 class="av-footer-cat-name">Dane firmy</h5>
+            <span>AmperVolt usługi elektryczne</span>
+            <span>NIP: 5662032390</span>
+            <span>REGON: 524057224</span>
+        </div>
+        <hr class="my-4 d-sm-none">
+        <div class="d-flex flex-column justify-content-center mx-0 mx-md-5 px-lg-5 px-3">
+            <h5 class="av-footer-cat-name">Skontaktuj się z nami</h5>
+            <a href="mailto:ma.ankiewicz@gmail.com" class="text-white mb-1"><i class="bi bi-envelope mx-2"></i> ma.ankiewicz@gmail.com</a>
+            <a href="tel:+48798845336" class="text-white mb-1"><i class="bi bi-telephone mx-2"></i> +48 798 845 336</a>
+        </div>
+    </footer>
+    <script src="https://account.snatchbot.me/script.js"></script><script>window.sntchChat.Init(398419)</script> <!--CHAT BOOT TEST-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        function copyDataWithPopover(popoverId){
+
+            var object = document.getElementById(popoverId);
+            var copyValue = object.dataset.avCopyData;
+            var idMarker = "#" + popoverId
+            navigator.clipboard.writeText(copyValue).then(() => {
+                const popover = new bootstrap.Popover(idMarker);
+                popover.show();
+                setTimeout(() => {
+                    popover.dispose();
+                }, 800);
+            }).catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+
+        }
+
+    </script>
+    <script>
+        window.addEventListener('scroll', function() {
+            var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+            var navHeader = document.getElementById("av-nav-header");
+            const triggerPosition = 60;
+            const accuracy = 30;
+            const transparentClassName = "av-transparent-nav-header";
+
+            if (! navHeader.classList.contains(transparentClassName) && scrollPosition > triggerPosition + accuracy) {
+                // DO WHEN SCROLLED DOWN
+                navHeader.classList.toggle(transparentClassName);
+            }
+            else if (navHeader.classList.contains(transparentClassName) && scrollPosition < triggerPosition - accuracy) {
+                // DO WHEN SCROLLED UP
+                navHeader.classList.toggle(transparentClassName);
+            }
+
+        });
+
+    </script>
+    <script>
+        function loadJsRequiredElements(object) {
+            var objectToLoad = object.dataset.objectToLoad;
+            document.getElementById(objectToLoad).classList.remove("d-none")
+            object.remove();
+        }
+
+        var jsNotLoadedItems = Array.prototype.slice.call(document.getElementsByClassName("av-js-not-loaded"))
+        jsNotLoadedItems.forEach(loadJsRequiredElements);
+    </script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+
+    </script>
+</body>
+
+</html>
