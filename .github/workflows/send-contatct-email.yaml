@@ -3,6 +3,7 @@ run-name: Run Contact Email by ${{ github.actor }}
 on:
   workflow_dispatch:
 jobs:
+  send-contact-email:
   - name: Send email
     uses: dawidd6/action-send-mail@v3.12.0
     with:
