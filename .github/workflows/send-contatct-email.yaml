@@ -49,8 +49,15 @@ jobs:
           from: ${{ github.event.inputs.clientName }}
           reply_to: ${{ github.event.inputs.clientEmail }}
           
-          # Optional plain body:
-          body: ${{ github.event.inputs.message }} # TODO full message
+          html_body: |
+              <!DOCTYPE html>
+              <html>
+              <body>
+              <h1>${{ github.event.inputs.messageCategory }}</h1>
+              <p>${{ github.event.inputs.message }}</p>
+              </body>
+              </html>
+          # body: ${{ github.event.inputs.message }} # TODO full message
 
           # Optional HTML body read from file:
           # html_body: file://README.html TODO MESSAGE PATTERN
