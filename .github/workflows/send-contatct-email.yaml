@@ -45,12 +45,12 @@ jobs:
           to: ${{secrets.CONTACT_EMAIL}}
 
           # From html form:
-          subject: Form title # TODO get from args
-          from: Luke Skywalker # <user@example.com> # NAME FROM FORM
-          reply_to: luke@example.com # EMAIL FROM FORM
+          subject: "Formularz kontaktowy ampervolt.net. ${{ github.event.inputs.messageCategory }}" # ampervolt.net to env vars
+          from: ${{ github.event.inputs.clientName }}
+          reply_to: ${{ github.event.inputs.clientEmail }}
           
           # Optional plain body:
-          body: Build job of ${{github.repository}} completed successfully!
+          body: ${{ github.event.inputs.message }} # TODO full message
 
           # Optional HTML body read from file:
           # html_body: file://README.html TODO MESSAGE PATTERN
