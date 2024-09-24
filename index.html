@@ -447,60 +447,19 @@
             <a href="tel:+48798845336" class="text-white mb-1"><i class="bi bi-telephone mx-2"></i> +48 798 845 336</a>
         </div>
     </footer>
-    <script src="https://account.snatchbot.me/script.js"></script><script>window.sntchChat.Init(398419)</script> <!--CHAT BOOT TEST-->
+    <script src="https://account.snatchbot.me/script.js"></script> <!--CHAT BOOT TEST-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <script src="./scripts/scripts.js"></script>
     <script>
-        function copyDataWithPopover(popoverId){
-
-            var object = document.getElementById(popoverId);
-            var copyValue = object.dataset.avCopyData;
-            var idMarker = "#" + popoverId
-            navigator.clipboard.writeText(copyValue).then(() => {
-                const popover = new bootstrap.Popover(idMarker);
-                popover.show();
-                setTimeout(() => {
-                    popover.dispose();
-                }, 800);
-            }).catch(err => {
-                console.error("Failed to copy: ", err);
-            });
-
-        }
-
-    </script>
-    <script>
-        window.addEventListener('scroll', function() {
-            var scrollPosition = window.scrollY || document.documentElement.scrollTop;
-            var navHeader = document.getElementById("av-nav-header");
-            const triggerPosition = 60;
-            const accuracy = 30;
-            const transparentClassName = "av-transparent-nav-header";
-
-            if (! navHeader.classList.contains(transparentClassName) && scrollPosition > triggerPosition + accuracy) {
-                // DO WHEN SCROLLED DOWN
-                navHeader.classList.toggle(transparentClassName);
-            }
-            else if (navHeader.classList.contains(transparentClassName) && scrollPosition < triggerPosition - accuracy) {
-                // DO WHEN SCROLLED UP
-                navHeader.classList.toggle(transparentClassName);
-            }
-
-        });
-
-    </script>
-    <script>
-        function loadJsRequiredElements(object) {
-            var objectToLoad = object.dataset.objectToLoad;
-            document.getElementById(objectToLoad).classList.remove("d-none")
-            object.remove();
-        }
-
+        window.sntchChat.Init(398419); // CHAT BOOT TEST
+        window.addEventListener('scroll', changeScrollableElements);
         var jsNotLoadedItems = Array.prototype.slice.call(document.getElementsByClassName("av-js-not-loaded"))
         jsNotLoadedItems.forEach(loadJsRequiredElements);
     </script>
     <script>
+        // BOOTSTRAP SCRIPT
         // Example starter JavaScript for disabling form submissions if there are invalid fields
         (() => {
             'use strict'
