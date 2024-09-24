@@ -1,5 +1,4 @@
 name: Send contact email from web form
-run-name: Run Contact Email by ${{ github.actor }}
 on:
   workflow_dispatch:
 jobs:
