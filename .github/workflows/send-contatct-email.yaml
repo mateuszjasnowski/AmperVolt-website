@@ -1,7 +1,22 @@
 name: Send contact email from web form
-run-name: Run Contact Email by ${{ github.actor }}
 on:
   workflow_dispatch:
+    inputs:
+      clientName:
+        description: 'Name of client that requesting contact'
+        required: true
+      clientEmail:
+        description: 'Contact email to replay'
+        required: true
+      messageCategory:
+        description: 'Topic of query'
+        required: true
+      approxJobStartDate:
+        description: '(Optional) When client want to start'
+        required: false
+      message:
+        description: 'Query from client'
+        required: true
 jobs:
   send-contact-email:
     runs-on: ubuntu-latest
@@ -16,44 +31,41 @@ jobs:
           #
           #  * smtp://user:password@server:port
           #  * smtp+starttls://user:password@server:port
+
+          # MAIL SERVER SETTINGS
           connection_url: ${{secrets.MAIL_CONNECTION}}
-          # Required mail server address if not connection_url:
-          server_address: smtp.gmail.com
-          # Server port, default 25:
-          server_port: 465
-          # Optional whether this connection use TLS (default is true if server_port is 465)
-          secure: true
-          # Optional (recommended) mail server username:
           username: ${{secrets.MAIL_USERNAME}}
-          # Optional (recommended) mail server password:
           password: ${{secrets.MAIL_PASSWORD}}
-          # Required mail subject:
-          subject: Github Actions job result
-          # Required recipients' addresses:
-          to: obiwan@example.com,yoda@example.com
-          # Required sender full name (address can be skipped):
-          from: Luke Skywalker # <user@example.com>
-          # Optional plain body:
-          body: Build job of ${{github.repository}} completed successfully!
+
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+
+          # MESSAGE SETTINGS
+          to: ${{secrets.CONTACT_EMAIL}}
+
+          # From html form:
+          subject: "Formularz kontaktowy ampervolt.net. ${{ github.event.inputs.messageCategory }}" # ampervolt.net to env vars
+          from: ${{ github.event.inputs.clientName }}
+          reply_to: ${{ github.event.inputs.clientEmail }}
+          
+          html_body: |
+              <!DOCTYPE html>
+              <html>
+              <body>
+              <h1>${{ github.event.inputs.messageCategory }}</h1>
+              <p>${{ github.event.inputs.message }}</p>
+              </body>
+              </html>
+          # body: ${{ github.event.inputs.message }} # TODO full message
+
           # Optional HTML body read from file:
-          html_body: file://README.html
-          # Optional carbon copy recipients:
-          cc: kyloren@example.com,leia@example.com
-          # Optional blind carbon copy recipients:
-          bcc: r2d2@example.com,hansolo@example.com
-          # Optional recipient of the email response:
-          reply_to: luke@example.com
-          # Optional Message ID this message is replying to:
-          in_reply_to: <random-luke@example.com>
-          # Optional unsigned/invalid certificates allowance:
+          # html_body: file://README.html TODO MESSAGE PATTERN
+
           ignore_cert: true
-          # Optional converting Markdown to HTML (set content_type to text/html too):
-          convert_markdown: true
-          # Optional attachments:
-          attachments: attachments.zip,git.diff,./dist/static/*.js
-          # Optional priority: 'high', 'normal' (default) or 'low'
           priority: low
-          # Optional nodemailerlog: true/false
-          nodemailerlog: false
-          # Optional nodemailerdebug: true/false if true lognodem will also be set true
-          nodemailerdebug: false
+
+          # Optional:
+          # cc: kyloren@example.com,leia@example.com
+          bcc: ${{secrets.MAIL_USERNAME}}
+          # attachments: attachments.zip,git.diff,./dist/static/*.js
