@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send Contact Email
-        uses: dawidd6/action-send-mail@v3
+        uses: dawidd6/action-send-mail@v3 >> /dev/null
         with:
           # Specify connection via URL (replaces server_address, server_port, secure,
           # username and password)
